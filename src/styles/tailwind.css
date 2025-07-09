@@ -1,0 +1,243 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+/* Custom CSS Variables */
+:root {
+    /* Light Theme Colors */
+    --color-primary: #D32F2F;
+    --color-primary-100: #FFCDD2;
+    --color-primary-500: #F44336;
+    --color-secondary: #388E3C;
+    --color-secondary-100: #C8E6C9;
+    --color-secondary-500: #4CAF50;
+    --color-background: #F5F5F5;
+    --color-surface: #FFFFFF;
+    --color-on-primary: #FFFFFF;
+    --color-on-secondary: #FFFFFF;
+    --color-on-background: #212121;
+    --color-on-surface: #212121;
+    --color-success: #388E3C;
+    --color-success-bg: #E8F5E9;
+    --color-error: #D32F2F;
+    --color-error-bg: #FFEBEE;
+    --color-warning: #FFA000;
+    --color-warning-bg: #FFF8E1;
+    --color-info: #1976D2;
+    --color-info-bg: #E3F2FD;
+
+    /* Border Radius */
+    --border-radius: 0.5rem;
+}
+
+/* Dark Theme Colors */
+.dark {
+    --color-primary: #FF5252;
+    --color-primary-100: #B71C1C;
+    --color-primary-500: #F44336;
+    --color-secondary: #69F0AE;
+    --color-secondary-100: #1B5E20;
+    --color-secondary-500: #4CAF50;
+    --color-background: #121212;
+    --color-surface: #1E1E1E;
+    --color-on-primary: #000000;
+    --color-on-secondary: #000000;
+    --color-on-background: #FFFFFF;
+    --color-on-surface: #FFFFFF;
+    --color-success: #69F0AE;
+    --color-success-bg: #1B5E20;
+    --color-error: #FF5252;
+    --color-error-bg: #B71C1C;
+    --color-warning: #FFD740;
+    --color-warning-bg: #F57F17;
+    --color-info: #40C4FF;
+    --color-info-bg: #0D47A1;
+}
+
+/* Custom Animation Classes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.4s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-pulse-custom {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Custom Utility Classes */
+.gradient-primary {
+    background: linear-gradient(to right, var(--color-primary), var(--color-primary-500));
+}
+
+.gradient-secondary {
+    background: linear-gradient(to right, var(--color-secondary), var(--color-secondary-500));
+}
+
+/* Custom Component Classes */
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded font-medium transition-all duration-200 focus:outline-none;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-onPrimary hover:bg-opacity-90 focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-onSecondary hover:bg-opacity-90 focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+    }
+
+    .btn-outline-primary {
+        @apply border border-primary text-primary hover:bg-primary hover:text-onPrimary focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+    }
+
+    .btn-outline-secondary {
+        @apply border border-secondary text-secondary hover:bg-secondary hover:text-onSecondary focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+    }
+
+    .card {
+        @apply bg-surface rounded-lg shadow-md p-4;
+    }
+
+    .input-field {
+        @apply w-full px-3 py-2 bg-surface border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    }
+
+    .alert {
+        @apply p-4 mb-4 rounded;
+    }
+
+    .alert-success {
+        @apply bg-successBackground text-success;
+    }
+
+    .alert-error {
+        @apply bg-errorBackground text-error;
+    }
+
+    .alert-warning {
+        @apply bg-warningBackground text-warning;
+    }
+
+    .alert-info {
+        @apply bg-infoBackground text-info;
+    }
+
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .badge-primary {
+        @apply bg-primary text-onPrimary;
+    }
+
+    .badge-secondary {
+        @apply bg-secondary text-onSecondary;
+    }
+
+    .badge-success {
+        @apply bg-success text-white;
+    }
+
+    .badge-error {
+        @apply bg-error text-white;
+    }
+
+    .badge-warning {
+        @apply bg-warning text-white;
+    }
+
+    .badge-info {
+        @apply bg-info text-white;
+    }
+
+    .glassmorphism {
+        @apply bg-surface bg-opacity-70 backdrop-blur-md border border-opacity-20;
+    }
+}
