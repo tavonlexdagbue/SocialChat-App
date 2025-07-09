@@ -1,0 +1,16 @@
+npm install        //to install all the dependencies on package.json
+
+install supabase register and login
+
+npm run build     //this is to run build
+
+npm start        //  this is to start 
+i
+http://localhost:4028/
+
+user-registration
+user-profile-management
+user-login
+real-time-chat-interface
+media-gallery-and-viewer
+friend-discovery-and-management
