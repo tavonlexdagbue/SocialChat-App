@@ -90,6 +90,8 @@ dist
 
 # vuepress build output
 .vuepress/dist
+#packagelock
+package-lock.json
 
 # vuepress v2.x temp and cache directory
 .temp
