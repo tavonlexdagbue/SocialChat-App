@@ -28,7 +28,7 @@ const RealTimeChatInterface = () => {
   const mockConversations = {
     '1': {
       id: '1',
-      name: "Sarah Johnson",
+      name: "Dagbue Anthoniia ",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b9a0b8e0?w=150&h=150&fit=crop&crop=face",
       isGroupChat: false,
       memberCount: 2,
