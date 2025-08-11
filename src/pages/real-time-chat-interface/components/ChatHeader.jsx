@@ -14,7 +14,8 @@ const ChatHeader = ({
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate(-1);
+    navigate('/'); // go to home page
+  
   };
 
   return (
