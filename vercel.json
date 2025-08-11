@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "vite.config.js", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ],
+  "env": {
+    "VITE_SUPABASE_URL": "https://ugdudkfcinvpzamsmjiv.supabase.co",
+    "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVnZHVka2ZjaW52cHphbXNtaml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE5NTc1MjksImV4cCI6MjA2NzUzMzUyOX0.YbP-nxaDstkPgw7GNrB_jSdidP4nV2vf7NrYIicRg-M"
+  }
+}
